@@ -50,8 +50,7 @@ namespace PizzaDay_Noser
         {
             DatabaseObject dataObject = new DatabaseObject();
             var bulkOrder = dataObject.GetBulkOrderByID(orderId);
-            var newPage = new OrderView(bulkOrder) { Title = "Bestellung:" + bulkOrder.OrderTime.ToString("dd.MM.yyyy"), Icon = "settings.png" };
-            ChangeDetail(newPage);
+            Navigation.PushAsync(new OrderView(bulkOrder) { Title = "Bestellung:" + bulkOrder.OrderTime.ToString("dd.MM.yyyy"), Icon = "settings.png" });
         }
     }
 }
