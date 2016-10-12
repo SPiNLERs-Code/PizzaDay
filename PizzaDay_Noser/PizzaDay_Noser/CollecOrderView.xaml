@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#FFF" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaDay_Noser.CollecOrderView">
+  <Grid Margin="30" VerticalOptions="FillAndExpand">
+    <Grid.RowDefinitions>
+      
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="50" />
+    </Grid.RowDefinitions>
+    <Grid Grid.Row="0">
+      <Label TextColor="#000" LineBreakMode="WordWrap" XAlign="Start">Starte eine Sammelbestellung, in dem du den Tag und die Bestellfrist auswählst.</Label>
+    </Grid>
+    <StackLayout VerticalOptions="FillAndExpand" Grid.Row="1">
+      <Label TextColor="#000" LineBreakMode="WordWrap" XAlign="Center">Datum</Label>
+     <DatePicker HorizontalOptions="FillAndExpand" BackgroundColor="#DDD" TextColor="#000"></DatePicker>
+      <Label TextColor="#000" LineBreakMode="WordWrap" XAlign="Center">Bestellfrist</Label>
+      <TimePicker HorizontalOptions="FillAndExpand" BackgroundColor="#DDD" TextColor="#000"></TimePicker>
+      <Label TextColor="#000" LineBreakMode="WordWrap" XAlign="Center">Restaurant</Label>
+    <Picker x:Name="IndustryTypePicker1" TextColor="#000" SelectedIndex="{Binding Industry}" HorizontalOptions="FillAndExpand" BackgroundColor="#DDD">
+        <Picker.Items>
+            <x:String>Dieci</x:String> 
+            <x:String>Gianni</x:String>
+            <x:String>Pizza Blitz</x:String>
+        </Picker.Items>
+    </Picker> 
+    
+      <Label TextColor="#000" LineBreakMode="WordWrap" XAlign="Center">Nachricht / Beschreibung</Label>
+      <Editor HeightRequest="100" TextColor="#000" BackgroundColor="#DDD"></Editor>
+    </StackLayout>
+  
+    <Grid VerticalOptions="FillAndExpand"  Grid.Row="2">
+      <StackLayout >
+        <Button x:Name="new_bulk_order" HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#72bb53" Text="Bestellung starten" />
+      </StackLayout>
+    </Grid>
+  </Grid>
+  
+  
+</ContentPage>

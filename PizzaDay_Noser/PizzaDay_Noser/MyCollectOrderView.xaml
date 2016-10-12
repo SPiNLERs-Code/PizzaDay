@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#FFF" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaDay_Noser.MyCollectOrderView">
+  <ListView SeparatorColor="#333"  x:Name="MyBulkOrderList"   RowHeight="75" ItemTapped="OnMore" >
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell IsEnabled="{Binding IsOrdering}">
+          <Grid  Padding="5" Opacity="{Binding Opacity}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="31"></RowDefinition>
+              <RowDefinition Height="29"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="24"  x:Name="histoyLabel1" Text="{Binding Title}" TextColor="Black" />
+            <Label FontSize="12" Grid.Row="1" Grid.Column="0" Text="{Binding Description}" Font="Small"  TextColor="Gray" LineBreakMode="WordWrap"></Label>
+          </Grid>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>

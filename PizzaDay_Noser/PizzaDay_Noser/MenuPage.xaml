@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage Icon="settings.png"  x:Name="MenuPage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaDay_Noser.MenuPage"
+                  xmlns:local="clr-namespace:PizzaDay_Noser;assembly=PizzaDay_Noser">
+  <MasterDetailPage.Master x:Class="MasterDetailPageNavigation.MainPage" BackgroundColor="#FFF">
+    <ContentPage Title="Menu">
+      <StackLayout Orientation="Vertical">
+        <Image Margin="30 ,0" Source="pizzaDay.png" />
+        <Button Clicked="HomeButton_OnClicked" Text="Home"/>
+        <Button Clicked="CollectionOrder_OnClicked" Text="Sammelbestellungen Starten"/>
+        <Button Clicked="MyColloectionOrder_Onclick" Text="Meine Sammelbestellungen"/>
+      </StackLayout>
+    </ContentPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail  BackgroundColor="#ddd">
+    
+    <local:HomeView />
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

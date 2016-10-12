@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#FFF" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaDay_Noser.HomeView">
+  <Grid VerticalOptions="FillAndExpand">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="10" /> 
+      <RowDefinition Height="100" /> 
+      <RowDefinition Height="0" /> 
+      <RowDefinition Height="auto" /> 
+      <RowDefinition Height="10" /> 
+      
+      <RowDefinition Height="*" /> 
+      <RowDefinition Height="80" /> 
+    </Grid.RowDefinitions>
+    <Grid VerticalOptions="FillAndExpand" Grid.Row="0" />
+    <Grid VerticalOptions="FillAndExpand" Grid.Row="1" >
+      <Image Margin="30 ,0" Source="pizzaDay.png" />
+    </Grid>
+    <Grid VerticalOptions="FillAndExpand"  Grid.Row="2" />
+    <Grid VerticalOptions="FillAndExpand"  Grid.Row="3" >
+    <StackLayout x:Name="OpenBulkOrders">
+    </StackLayout>  
+    
+    </Grid>
+    <Grid VerticalOptions="FillAndExpand"  Grid.Row="4" />
+    <Grid VerticalOptions="FillAndExpand"  Grid.Row="5" >
+      <StackLayout>
+        <Button HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#eae9e9" Text="Offene Bestellungen            (1)" />
+        <Button HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#eae9e9" Text="Vergangene Bestellungen  (20)" />
+      </StackLayout>
+    </Grid>
+    <Grid VerticalOptions="FillAndExpand"  Grid.Row="6">
+      <StackLayout Margin="30,0">
+        <Button x:Name="new_bulk_order" HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#72bb53" Text="Neue Sammelbestellung " />
+      </StackLayout>
+    </Grid>
+  </Grid>
+  
+</ContentPage>

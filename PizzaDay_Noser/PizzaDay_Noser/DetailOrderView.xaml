@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#FFF" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaDay_Noser.DetailOrderView">
+  <Grid Padding="5">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="2*" />
+      <RowDefinition Height="30" />
+      <RowDefinition Height="30" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Image Grid.Row="0"  x:Name="ItemImage" />
+    <Label FontSize="25" Grid.Row="1" x:Name="ItemName" />
+    <Label FontSize="15" Grid.Row="2" x:Name="ItemDescription" />
+    <StackLayout Grid.Row="3">
+      <Button Text="25cm"></Button>
+      <Button Text="30cm"></Button>
+      <Button Text="35cm"></Button>
+    </StackLayout>
+  </Grid>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#FFF" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaDay_Noser.FinalOrderView">
+  <StackLayout>
+    <Grid Padding="10,5,20,5" HeightRequest="30">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="8*"></ColumnDefinition>
+        <ColumnDefinition Width="4*"></ColumnDefinition>
+        <ColumnDefinition Width="1*"></ColumnDefinition>
+        <ColumnDefinition Width="5*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Label Font="Bolder" Grid.Column="0" TextColor="#000" XAlign="Start" Text="Pizza" />
+      <Label Font="Bolder" Grid.Column="1" TextColor="#000" XAlign="End" Text="Grösse" />
+      <Label Font="Bolder" Grid.Column="2" TextColor="#000" XAlign="End" Text=""  />
+      <Label Font="Bolder" Grid.Column="3" TextColor="#000" XAlign="End" Text="Preis" />
+    </Grid>
+    <Grid BackgroundColor="#000" HeightRequest="1" />
+    <ListView SeparatorColor="#333"  x:Name="FinalOrderList" RowHeight="35"  >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell IsEnabled="False">
+            <Grid  Padding="10,5,20,5">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Label Grid.Column="0" TextColor="#000" XAlign="Start"  Text="{Binding Name}" />
+              <Label Grid.Column="1" TextColor="#AAA" XAlign="End" Text="{Binding Size}" />
+              <Label Grid.Column="2" TextColor="#000" XAlign="End" Text="{Binding Count}" />
+              <Label Grid.Column="3" TextColor="#000" XAlign="End" Text="{Binding PriceLabel}" />
+              
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Grid BackgroundColor="#000" HeightRequest="1" />
+      
+    <Grid Padding="10,5,20,5" HeightRequest="40">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="8*"></ColumnDefinition>
+        <ColumnDefinition Width="4*"></ColumnDefinition>
+        <ColumnDefinition Width="1*"></ColumnDefinition>
+        <ColumnDefinition Width="5*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Label Font="Bold" Grid.Column="0" TextColor="#000" XAlign="Start" Text="Total" />
+      <Label Grid.Column="2" TextColor="#000" XAlign="End" x:Name="TotalCount"  />
+      <Label Font="Bold" Grid.Column="3" TextColor="#000" XAlign="End" x:Name="TotalPrice" />
+    </Grid>
+    <Grid VerticalOptions="FillAndExpand" Padding="0,10">
+      <StackLayout Margin="30,0,30,50">
+        <Button x:Name="new_bulk_order" HeightRequest="50"  TextColor="#000"  BorderRadius="0" BackgroundColor="#72bb53" Text="Bestellung abgeschlossen" />
+      </StackLayout>
+    </Grid>
+  </StackLayout>
+</ContentPage>
