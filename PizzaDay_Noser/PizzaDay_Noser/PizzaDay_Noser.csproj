@@ -36,14 +36,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Data\DatabaseObject.cs" />
+    <Compile Include="Data\DataObject.cs" />
+    <Compile Include="DemoDatas\DemoData.cs" />
     <Compile Include="DetailOrderView.xaml.cs">
       <DependentUpon>DetailOrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="FinalOrderView.xaml.cs">
       <DependentUpon>FinalOrderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\BulkOrderViewModel.cs" />
+    <Compile Include="Models\BulkOrder.cs" />
+    <Compile Include="Models\DescriptionItem.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="CollecOrderView.xaml.cs">
       <DependentUpon>CollecOrderView.xaml</DependentUpon>
     </Compile>

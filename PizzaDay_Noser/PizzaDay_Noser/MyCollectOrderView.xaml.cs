@@ -12,7 +12,7 @@ namespace PizzaDay_Noser
 {
     public partial class MyCollectOrderView : ContentPage
     {
-        public MyCollectOrderView(List<BulkOrderViewModel> myBulkOrders)
+        public MyCollectOrderView(List<BulkOrder> myBulkOrders)
         {
             InitializeComponent();
             MyBulkOrderList.ItemsSource = myBulkOrders;

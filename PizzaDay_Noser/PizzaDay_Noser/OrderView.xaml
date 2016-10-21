@@ -18,7 +18,7 @@
 
             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="0" Source="{Binding Image}" Aspect="AspectFill"/>
             <Label FontSize="24"  x:Name="histoyLabel1" Text="{Binding Name}" TextColor="Black" />
-            <Label FontSize="12" Grid.Row="1" Grid.Column="0" Text="{Binding Description}" Font="Small"  TextColor="Gray" LineBreakMode="WordWrap"></Label>
+            <Label FontSize="12" Grid.Row="1" Grid.Column="0" Text="{Binding DescriptionText}" Font="Small"  TextColor="Gray" LineBreakMode="WordWrap"></Label>
           </Grid>
         </ViewCell>
       </DataTemplate>

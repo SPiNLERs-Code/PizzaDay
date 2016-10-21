@@ -26,8 +26,8 @@
     <Grid VerticalOptions="FillAndExpand"  Grid.Row="4" />
     <Grid VerticalOptions="FillAndExpand"  Grid.Row="5" >
       <StackLayout>
-        <Button HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#eae9e9" Text="Offene Bestellungen            (1)" />
-        <Button HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#eae9e9" Text="Vergangene Bestellungen  (20)" />
+        <!--<Button HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#eae9e9" Text="Offene Bestellungen            (1)" />
+        <Button HeightRequest="50" TextColor="#000"  BorderRadius="0" BackgroundColor="#eae9e9" Text="Vergangene Bestellungen  (20)" />-->
       </StackLayout>
     </Grid>
     <Grid VerticalOptions="FillAndExpand"  Grid.Row="6">

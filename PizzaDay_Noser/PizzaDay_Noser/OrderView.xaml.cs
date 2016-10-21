@@ -12,10 +12,13 @@ namespace PizzaDay_Noser
 {
     public partial class OrderView : ContentPage
     {
-        public OrderView(BulkOrderViewModel bulkOrder)
+        BulkOrder _bulkOrder;
+
+        public OrderView(BulkOrder bulkOrder)
         {
+            _bulkOrder = bulkOrder;
             InitializeComponent();
-            OrderItemList.ItemsSource = bulkOrder.OrderItems;
+            OrderItemList.ItemsSource = bulkOrder.Restaurant.OrderItems;
         }
 
         public void OnMore(object sender, EventArgs e)
@@ -23,7 +26,7 @@ namespace PizzaDay_Noser
             var mi = ((ListView)sender);
             var it = (OrderItem)mi.SelectedItem;
 
-            var newPage = new DetailOrderView(it) { Title = it.Name, Icon = "settings.png" };
+            var newPage = new DetailOrderView(it,_bulkOrder.Id) { Title = it.Name, Icon = "settings.png" };
             Navigation.PushAsync(newPage);
         }
 
