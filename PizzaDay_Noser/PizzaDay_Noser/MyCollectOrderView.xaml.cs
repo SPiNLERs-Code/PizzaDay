@@ -20,22 +20,9 @@ namespace PizzaDay_Noser
 
         public void OnMore(object sender, EventArgs e)
         {
-            FinalOrderViewModel vm = new FinalOrderViewModel();
-            vm.finalOrders.Add( new FinalOrderItemViewModel() { Count = 4, Name = "Hawaii", Price = 30, Size = "Small" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 3, Name = "Hawaii", Price = 20, Size = "Medium" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 6, Name = "Hawaii", Price = 50, Size = "Large" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 4, Name = "Hawaii", Price = 30, Size = "Small" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 3, Name = "Hawaii", Price = 20, Size = "Medium" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 6, Name = "Hawaii", Price = 50, Size = "Large" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 4, Name = "Hawaii", Price = 30, Size = "Small" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 3, Name = "Hawaii", Price = 20, Size = "Medium" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 6, Name = "Hawaii", Price = 50, Size = "Large" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 4, Name = "Hawaii", Price = 30, Size = "Small" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 3, Name = "Hawaii", Price = 20, Size = "Medium" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 6, Name = "Hawaii", Price = 50, Size = "Large" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 4, Name = "Hawaii", Price = 30, Size = "Small" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 3, Name = "Hawaii", Price = 20, Size = "Medium" });
-            vm.finalOrders.Add(new FinalOrderItemViewModel() { Count = 6, Name = "Hawaii", Price = 50, Size = "Large" });
+            ListView listView = sender as ListView;
+            BulkOrder bulkOrder = listView.SelectedItem as BulkOrder;
+            FinalOrderViewModel vm = new FinalOrderViewModel(bulkOrder.Id);
             var newPage = new FinalOrderView(vm);
             Navigation.PushAsync(newPage);
         }

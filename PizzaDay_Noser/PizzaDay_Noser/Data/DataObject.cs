@@ -37,6 +37,12 @@ namespace PizzaDay_Noser.Data
            return _demoData.GetAllRestaurants();
         }
 
+        public List<Order> GetAllOrderByBulkOrderId(int bulkOrderId)
+        {
+            var bulkOrder = _demoData.SavedBulkOrders.Where(x => x.Id == bulkOrderId).FirstOrDefault();
+            return bulkOrder.Items;
+        }
+
         public void SaveBulkOrder(TimeSpan deliveryTime, DateTime deliveryDate, TimeSpan deadlineTime, DateTime deadlineDate, string description, int restaurantId)
         {
             BulkOrder newCreatedBulkOrder = new BulkOrder

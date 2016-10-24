@@ -14,7 +14,7 @@ namespace PizzaDay_Noser
         public FinalOrderView(FinalOrderViewModel finalOrderViewModel)
         {
             InitializeComponent();
-            FinalOrderList.ItemsSource = finalOrderViewModel.finalOrders;
+            FinalOrderList.ItemsSource = finalOrderViewModel.FinalOrders;
             TotalCount.Text = finalOrderViewModel.Count.ToString();
             TotalPrice.Text = finalOrderViewModel.SummLabel;
         }

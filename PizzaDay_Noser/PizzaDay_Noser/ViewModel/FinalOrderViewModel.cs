@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PizzaDay_Noser.Data;
+using PizzaDay_Noser.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +10,45 @@ namespace PizzaDay_Noser.ViewModel
 {
     public class FinalOrderViewModel
     {
-        public FinalOrderViewModel()
+        private DataObject _dataObject;
+
+        public FinalOrderViewModel(int orderId)
         {
-            this.finalOrders = new List<FinalOrderItemViewModel>();
+            _dataObject = new DataObject();
+
+            var allOrder = _dataObject.GetAllOrderByBulkOrderId(orderId);
+
+            var finalOrderItems = new List<FinalOrderItemViewModel>();
+            foreach (var item in allOrder)
+            {
+                var tempFinalOrder = finalOrderItems.Where(x => x.Name == item.Item.Name && x.Size == item.Size.ToString()).FirstOrDefault();
+                if (tempFinalOrder != null)
+                {
+                    tempFinalOrder.Count++;
+                    tempFinalOrder.Price += item.Item.Price;
+                    continue;
+                }
+                tempFinalOrder = new FinalOrderItemViewModel()
+                {
+                    Count = 1,
+                    Name = item.Item.Name,
+                    Price = item.Item.Price,
+                    Size = item.Size.ToString() // returns "Large"
+                };
+
+                finalOrderItems.Add(tempFinalOrder);
+            }
+            FinalOrders = finalOrderItems;
+
         }
-        public List<FinalOrderItemViewModel> finalOrders { get; set; }
+        public List<FinalOrderItemViewModel> FinalOrders { get; set; }
 
 
         public decimal Summ
         {
             get
             {
-                return finalOrders.Sum(x => x.Price);
+                return FinalOrders.Sum(x => x.Price);
             }
         }
         
@@ -35,7 +64,7 @@ namespace PizzaDay_Noser.ViewModel
         {
             get
             {
-                return finalOrders.Sum(x => x.Count);
+                return FinalOrders.Sum(x => x.Count);
             }
         }
 

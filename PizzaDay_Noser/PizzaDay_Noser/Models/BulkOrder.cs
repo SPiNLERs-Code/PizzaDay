@@ -8,6 +8,7 @@ namespace PizzaDay_Noser.Models
 {
     public class BulkOrder
     {
+
         public int Id { get; set; }
 
         public Restaurant Restaurant { get; set; }
@@ -23,5 +24,13 @@ namespace PizzaDay_Noser.Models
         public User Creator { get; set; }
 
         public List<Order> Items { get; set; }
+
+        public string DisplayTitle
+        {
+            get
+            {
+                return Restaurant.Name+" - "+DeliveryTime.ToString("dd.MM.yy");
+            }
+        }
     }
 }

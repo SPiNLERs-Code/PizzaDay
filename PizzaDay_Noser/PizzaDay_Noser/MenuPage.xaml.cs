@@ -21,11 +21,11 @@ namespace PizzaDay_Noser
             App app = Application.Current as App;
             MessagingCenter.Subscribe<HomeView>(this, "ShowMenu", (args) => { IsPresented = true; });
             MessagingCenter.Subscribe<HomeView>(this, "ChangePage", (args) => { ChangeDetail(args.NextPage); });
-            MessagingCenter.Subscribe<string>(this, "SuccessfulMessage", (message) =>
+            MessagingCenter.Subscribe<string>(this, "SuccessfulMessage", async (message) =>
             {
-                DisplayAlert("", message, "OK");
-                this.Detail = new HomeView();
-                Navigation.PopToRootAsync();
+                Detail = new HomeView();
+                await Navigation.PopToRootAsync();
+                await DisplayAlert("", message, "OK");
             });
 
         }

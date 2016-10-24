@@ -14,7 +14,7 @@
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label FontSize="24"  x:Name="histoyLabel1" Text="{Binding Title}" TextColor="Black" />
+            <Label FontSize="24"  x:Name="histoyLabel1" Text="{Binding DisplayTitle}" TextColor="Black" />
             <Label FontSize="12" Grid.Row="1" Grid.Column="0" Text="{Binding Description}" Font="Small"  TextColor="Gray" LineBreakMode="WordWrap"></Label>
           </Grid>
         </ViewCell>
