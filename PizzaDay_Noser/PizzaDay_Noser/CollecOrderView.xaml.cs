@@ -54,6 +54,7 @@ namespace PizzaDay_Noser
 
             _dataObject.SaveBulkOrder(DeliveryTime.Time, DeliveryDate.Date, DeadlineTime.Time, DeadlineDate.Date, Description.Text, _restaurants[RestaurantPicker.SelectedIndex].Id);
             MessagingCenter.Send<string>("Reload", "ReloadOpenBulkOrders");
+            MessagingCenter.Send<string>("", "ReloadMenuPage");
             MessagingCenter.Send<string>("Die Sammelbestellung wurde erfolgreich erstellt!", "SuccessfulMessage");
             ErrorText.IsVisible = true;
         }

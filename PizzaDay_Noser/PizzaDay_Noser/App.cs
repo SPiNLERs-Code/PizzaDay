@@ -11,7 +11,11 @@ namespace PizzaDay_Noser
     {
         public App()
         {
-            MainPage = new NavigationPage(new MenuPage() {Title = "Home" }) { BarBackgroundColor = Color.FromHex( "#72bb53" )};
+            MainPage = new NavigationPage(new MenuPage() {Title = "" }) { BarBackgroundColor = Color.FromHex( "#72bb53" )};
+            MessagingCenter.Subscribe<string>(this, "ReloadMenuPage", (message) =>
+            {
+                MainPage = new NavigationPage(new MenuPage() { Title = "" }) { BarBackgroundColor = Color.FromHex("#72bb53") };
+            });
         }
 
         protected override void OnStart()

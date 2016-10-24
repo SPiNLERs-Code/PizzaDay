@@ -49,6 +49,7 @@ namespace PizzaDay_Noser
         private void AddOrder(OrderSize orderSize)
         {
             _dataObject.SaveOrder(_orderItem, orderSize, _bulkOrderId);
+            MessagingCenter.Send<string>("", "ReloadMenuPage");
             MessagingCenter.Send<string>("Die Bestellung wurde erfolgreich aufgegeben!", "SuccessfulMessage");
         }
     }

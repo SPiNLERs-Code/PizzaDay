@@ -23,8 +23,6 @@ namespace PizzaDay_Noser
             MessagingCenter.Subscribe<HomeView>(this, "ChangePage", (args) => { ChangeDetail(args.NextPage); });
             MessagingCenter.Subscribe<string>(this, "SuccessfulMessage", async (message) =>
             {
-                Detail = new HomeView();
-                await Navigation.PopToRootAsync();
                 await DisplayAlert("", message, "OK");
             });
 
